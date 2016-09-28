@@ -1,0 +1,33 @@
+Package Control?
+通俗易懂地说，这个是你在完成安装SublimeText后必须安装的东西。你问为什么？因为有了这个特殊的“插件包”，你可以很容易地安装、升级、删除，
+甚至非常方便地查看您已经安装在SublimeText中的包或插件的列表。它通过菜单和对应的行为使这些过程变得非常容易和有组织。
+How?
+自动安装：
+
+1、通过快捷键 ctrl+` 或者 View > Show Console 菜单打开控制台
+
+2、粘贴对应版本的代码后回车安装
+
+适用于 Sublime Text 3：
+
+import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+
+适用于 Sublime Text 2：
+
+import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp)ifnotos.path.exists(ipp)elseNone;urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read());print('Please restart Sublime Text to finish installation')
+
+手动安装：
+
+第一步，先下载https://github.com/wbond/sublime_package_control中的zip文件，解压后将文件夹名更改为package control。
+
+第二步，下载插件分支https://github.com/wbond/sublime_package_control/tree/python3中的zip文件，解压后覆盖到package control中，完成此插件API函数的更新。
+
+最后，将package control文件夹放入C:\Users\Mr.DenGo(你的电脑名)\AppData\Roaming\Sublime Text 3\Packages中，重启sublime text 3即可生效。
+
+打开sublime text 3编辑器，在菜单->preferences->Package Settings和package control选项，就说明安装package control成功了。
+
+如何用？
+Package Control的使用方法：例如安装插件FASM
+快捷键 Ctrl+Shift+P（菜单 – Tools – Command Paletter），输入 install 选中Install Package并回车，输入或选择你需要的插件回车就安装了（注意左下角的小文字变化，会提示安装成功）。
+
+sublime右下角可以选择语言
